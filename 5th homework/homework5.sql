@@ -69,7 +69,12 @@ where pro_price >= 350
 select avg(pro_price), pro_com from dbo.item_mast
 group by pro_com
 --task24
-???--there is no emp_department table
+create table emp_department(dpt_code int primary key, dpt_name varchar(50), dpt_allotment int)
+select * from emp_department
+insert into emp_department values (57, 'IT', 65000),
+(63, 'Finance', 15000), (47, 'HR', 240000),
+(27, 'RD', 55000), (89, 'QC', 75000)
+select sum(dpt_allotment) from emp_department
 --task25
 select count(emp_idno), emp_dept from dbo.emp_details
 GROUP BY emp_dept
